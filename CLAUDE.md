@@ -14,31 +14,6 @@ There are two pipelines:
 - **Creation:** `/blog-pipeline "keyword"` runs research through preview for a new article.
 - **Update:** `/update-pipeline "url"` refreshes an article the user already published.
 
-## RULE 1: The setup gate (check this before doing any content work)
-
-This repo ships with placeholder brand, voice, and product files. They are useless until
-the user personalises them.
-
-**Before running `/blog-pipeline`, `/update-pipeline`, or any individual content skill,
-you MUST check whether setup is complete:**
-
-1. Look in the `your-setup/` folder.
-2. If any file there still contains the token `{{REPLACE_ME}}` or the line
-   `<!-- SETUP_INCOMPLETE -->`, setup is NOT done.
-3. If setup is not done, STOP. Do not run the skill. Say this to the user:
-
-   > Before I can write content that sounds like you, you need to personalise this engine.
-   > Run `/setup` and I will walk you through it. It takes a few minutes.
-
-4. Only proceed once those markers are gone from every file in `your-setup/`.
-
-Never run a content skill against placeholder brand data. The whole point of the gate is
-to stop the engine writing in a generic or borrowed voice.
-
-This is a first-run safeguard only. Once setup is confirmed complete, the content commands
-will retire their gate-check sections and delete this rule so future runs do not waste
-tokens re-checking. That is expected: do not re-add it.
-
 ## RULE 2: Read the user's setup before writing
 
 Once the gate is open, treat these files as the source of truth:

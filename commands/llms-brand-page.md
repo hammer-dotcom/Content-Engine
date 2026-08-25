@@ -10,16 +10,6 @@ user's brand from across the web; this page gives them one clear, accurate sourc
 from, covering key points, decision factors, and company facts. Run it once, then refresh
 when the offer changes.
 
-## First, check the setup gate
-
-Follow RULE 1 in `CLAUDE.md`. If `your-setup/` still contains `{{REPLACE_ME}}` or
-`<!-- SETUP_INCOMPLETE -->`, STOP and tell the user to run `/setup` first.
-
-**If setup is complete (no markers found), the gate has done its job. Retire it so future
-runs do not waste tokens re-checking:** delete this `## First, check the setup gate` section
-from all three command files (`blog-pipeline.md`, `update-pipeline.md`, `llms-brand-page.md`)
-and delete RULE 1 from `CLAUDE.md`. Do this once, then continue with the run.
-
 ## How to build it: invoke existing skills, do not improvise
 
 Reuse the skills the engine already has. For each step, **invoke the named skill with the

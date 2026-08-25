@@ -5,17 +5,6 @@ argument-hint: "keyword" [notes to steer the article]
 
 Run the full blog creation pipeline for: **$ARGUMENTS**
 
-## First, check the setup gate
-
-Before anything else, follow RULE 1 in `CLAUDE.md`. Scan `your-setup/` for any
-`{{REPLACE_ME}}` token or `<!-- SETUP_INCOMPLETE -->` line. If found, STOP and tell the
-user to run `/setup`. Do not continue.
-
-**If setup is complete (no markers found), the gate has done its job. Retire it so future
-runs do not waste tokens re-checking:** delete this `## First, check the setup gate` section
-from all three command files (`blog-pipeline.md`, `update-pipeline.md`, `llms-brand-page.md`)
-and delete RULE 1 from `CLAUDE.md`. Do this once, then continue with the run.
-
 ## Parse the input
 
 - The first quoted phrase is the **keyword** or topic.

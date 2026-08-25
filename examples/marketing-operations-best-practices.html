@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marketing Operations Best Practices</title>
+<style>
+:root{--ink:#17251f;--muted:#607068;--paper:#f7f8f2;--panel:#ffffff;--line:#dce4dc;--accent:#c75232;--accent-soft:#f7e4dc;--green:#2f6656}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.7}main{max-width:820px;margin:0 auto;padding:56px 24px 88px}header{border-bottom:1px solid var(--line);padding-bottom:32px;margin-bottom:30px}.eyebrow{font:700 12px/1.2 Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin:0 0 18px}h1{font-size:clamp(38px,6vw,64px);line-height:1.04;letter-spacing:0;margin:0 0 18px;max-width:760px}h2{font-size:30px;line-height:1.15;letter-spacing:0;margin:48px 0 14px;color:var(--green)}p{font-size:18px;margin:0 0 18px}ol,ul{font-size:18px;padding-left:28px}li{margin:5px 0}.lead{font-size:22px;line-height:1.5;color:#31443b}.notice{background:var(--accent-soft);border-left:4px solid var(--accent);padding:16px 18px;margin:0 0 38px;font:15px/1.55 Arial,sans-serif;color:#563329}.notice strong{display:block;margin-bottom:4px}table{width:100%;border-collapse:collapse;margin:22px 0 26px;background:var(--panel);font:15px/1.45 Arial,sans-serif}th,td{text-align:left;vertical-align:top;border:1px solid var(--line);padding:11px 12px}th{background:#edf2eb;color:var(--green);font-weight:700}a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}.closing{margin-top:48px;border-top:1px solid var(--line);padding-top:28px}.byline{font:14px Arial,sans-serif;color:var(--muted)}@media(max-width:600px){main{padding:34px 18px 60px}h2{font-size:26px;margin-top:38px}p,.lead,ol,ul{font-size:17px}table{display:block;overflow-x:auto;white-space:normal}}
+</style>
+</head>
+<body>
+<main>
+<header><p class="eyebrow">Marketing operations / field guide</p><h1>Marketing Operations Best Practices: Build the System Before You Add More Tools</h1><p class="byline">A practical operating model for lean B2B teams</p></header>
+<div class="notice"><strong>Verification and citation note</strong>The operating model and recommendations are the author's proposed framework, not an externally measured benchmark. No performance targets or market-wide statistics are presented. External claims are linked to Google source pages.</div>
+<p class="lead">Most marketing operations problems look like tool problems. They are usually definition problems.</p>
+<p>Marketing and sales use the same lifecycle label to mean different things. A campaign source is entered three different ways. A lead is routed, but nobody owns the exception when the record is incomplete. Reporting then turns into a weekly argument about whose spreadsheet is correct.</p>
+<p>The fix is to treat marketing operations as an operating system. Define the rules, assign ownership, connect the data, and create a review loop. Then automate the parts that are stable enough to automate.</p>
+<p>This is the recommended build order for a lean B2B team:</p>
+<ol><li>Define the revenue and lifecycle model.</li><li>Govern the data every workflow depends on.</li><li>Design handoffs as service agreements.</li><li>Measure the path from activity to pipeline.</li><li>Automate repeatable work with an exception path.</li><li>Add AI only where the controls are clear.</li></ol>
+<h2>Start with a shared revenue and lifecycle model</h2>
+<p>A CRM cannot produce reliable reporting until the team agrees what each lifecycle stage means and who owns movement between stages.</p>
+<p>For every stage, write a short contract:</p>
+<table><thead><tr><th>Field</th><th>Question to answer</th></tr></thead><tbody><tr><td>Definition</td><td>What does this stage mean in business terms?</td></tr><tr><td>Entry trigger</td><td>What event or decision moves a record into it?</td></tr><tr><td>Exit condition</td><td>What evidence moves it forward or backward?</td></tr><tr><td>Owner</td><td>Which team is responsible for the next action?</td></tr><tr><td>Required data</td><td>Which fields must be complete before movement?</td></tr><tr><td>Exceptions</td><td>What happens when the record does not fit the normal path?</td></tr></tbody></table>
+<p>Do not begin with a long list of statuses. Begin with the decisions the team needs to make. A stage should exist because it changes ownership, action, or reporting.</p>
+<p>This also gives marketing and sales a useful disagreement test. If two people cannot agree whether a record meets the entry condition, the problem is not a missing dashboard. The definition needs work.</p>
+<h2>Govern the data that every workflow depends on</h2>
+<p>Data governance for a lean team is a small set of enforced rules, not a large documentation project.</p>
+<p>Start with the fields that affect routing, reporting, and prioritization. Depending on the business, that may include account, role, lifecycle stage, source, campaign, region, consent status, and next owner. For each field, define the accepted values, the system of record, and the person or team responsible for exceptions.</p>
+<p>A useful data contract answers four questions:</p>
+<ul><li>Who creates the value?</li><li>Which values are allowed?</li><li>What happens when the value is missing or conflicts with another system?</li><li>How will the team detect the problem?</li></ul>
+<p>The last question is the one teams skip. A required field can still be wrong. Add a recurring check for blank values, invalid combinations, duplicates, and records that have not moved despite a qualifying event.</p>
+<p>For teams that need help designing this across CRM, attribution, lead routing, and reporting systems, marketing operations design and build is the right implementation layer. The goal is a maintainable contract, not more fields.</p>
+<h2>Design handoffs as service agreements</h2>
+<p>A lead handoff is reliable only when the trigger, receiving owner, response expectation, and rejection path are explicit.</p>
+<p>Document the handoff in a table before configuring an automation:</p>
+<table><thead><tr><th>Handoff element</th><th>Example question</th></tr></thead><tbody><tr><td>Trigger</td><td>What event makes this ready for the next team?</td></tr><tr><td>Payload</td><td>What context must travel with the record?</td></tr><tr><td>Owner</td><td>Which queue or person receives it?</td></tr><tr><td>Response expectation</td><td>What should happen next, and by when?</td></tr><tr><td>Acceptance</td><td>What counts as a valid handoff?</td></tr><tr><td>Rejection path</td><td>Where does an incomplete or unsuitable record go?</td></tr><tr><td>Visibility</td><td>Where can both teams see the current state?</td></tr></tbody></table>
+<p>This turns sales and marketing alignment into an operational contract. It also makes failure visible. A rejected lead should not disappear into a generic status. It should return a reason that can improve targeting, qualification, or data capture.</p>
+<p>Workflow automation across CRM, lead routing, and notifications can remove manual transfers once the contract is agreed. Automation should enforce the process, not decide what the process means.</p>
+<h2>Measure the operating system, not just campaign activity</h2>
+<p>A useful marketing operations dashboard explains what happened from source to pipeline and shows where the explanation is weak.</p>
+<p>Separate metrics into four groups:</p>
+<table><thead><tr><th>Metric group</th><th>What it answers</th><th>Examples</th></tr></thead><tbody><tr><td>Activity</td><td>What did the team or system do?</td><td>Campaign launches, touches, follow-ups</td></tr><tr><td>Conversion</td><td>What changed stage?</td><td>Stage-to-stage conversion, accepted handoffs</td></tr><tr><td>Revenue</td><td>What business outcome followed?</td><td>Pipeline contribution, sourced and influenced revenue</td></tr><tr><td>System health</td><td>Can the result be trusted?</td><td>Source completeness, duplicate rate, stale records</td></tr></tbody></table>
+<p>A measurement contract should define the event, owner, source, calculation, reporting location, and known limitations for each important metric. This prevents a familiar failure mode: a metric has a polished name but no agreed calculation.</p>
+<p><a href="https://support.google.com/analytics/answer/10089681">Google Analytics documentation</a> describes its current model as event-based and designed to connect website and app data across the customer journey. That makes it a useful measurement input, but it does not remove the need to define business stages and ownership in the CRM.</p>
+<p>Do not invent targets because another company published them. Establish a baseline, identify the bottleneck, make one change, and compare the same definition over time.</p>
+<h2>Automate stable, repeatable work</h2>
+<p>Automation should remove predictable manual work while preserving an observable exception path.</p>
+<ul><li>Assign records based on an agreed routing rule.</li><li>Notify an owner when a required event occurs.</li><li>Check campaign naming and required source fields.</li><li>Refresh recurring reports.</li><li>Create a task when a record reaches a defined stage.</li><li>Flag records with conflicting or missing values.</li></ul>
+<p>Before automating a workflow, document its inputs, decision rule, output, owner, and failure state. Add a log or report that shows what the automation changed. Give someone a way to pause or reverse it.</p>
+<p>The right question is not, “Can this be automated?” It is, “Can we explain what this automation did when it produces the wrong result?”</p>
+<h2>Add AI only where controls are clear</h2>
+<p>AI agents are useful for bounded research, monitoring, and summarization. They should not quietly become the owner of a business rule nobody has documented.</p>
+<p>Before introducing an agent or MCP-based workflow, define:</p>
+<ul><li>The sources it may use.</li><li>The actions it may take.</li><li>The records or systems it may access.</li><li>The evidence it must return.</li><li>The cases that require human approval.</li><li>The log, alert, or audit trail it creates.</li><li>The rollback path when its output is wrong.</li></ul>
+<p>A research agent can collect competitor changes into a review queue. A monitoring agent can flag broken campaign conventions. A reporting agent can summarize anomalies for an operator to inspect. These are bounded jobs. The system still needs a person who owns the decision.</p>
+<p>This matters for content workflows too. <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">Google Search Central recommends original information and analysis, clear expertise, and transparency about how automation was used</a>.</p>
+<p>AI workflow infrastructure can be useful when the use case is specific, the permissions are scoped, and review is part of the design. It is not a substitute for clean lifecycle definitions or reliable source data.</p>
+<h2>Use a weekly operating review and quarterly redesign</h2>
+<p>A fixed review cadence turns marketing operations from reactive ticket handling into managed infrastructure.</p>
+<p>A weekly review can cover:</p>
+<ul><li>Records stuck between stages.</li><li>Failed or paused automations.</li><li>Handoffs rejected and the reasons given.</li><li>Missing or conflicting source data.</li><li>Movement in the small set of agreed outcome metrics.</li><li>One decision that needs an owner.</li></ul>
+<p>A quarterly review should ask different questions. Which definitions are disputed? Which workflow has accumulated exceptions? Which manual task is repeated often enough to redesign? Which report is no longer used? Which new channel or tool has introduced an unowned data path?</p>
+<p>Do not add a platform because the review is uncomfortable. Use the review to identify the constraint, then decide whether the answer is a definition, process, data, staffing, or technology change.</p>
+<h2>A practical maturity model for lean teams</h2>
+<p>The next investment should address the current constraint, not maximize the size of the stack.</p>
+<table><thead><tr><th>Stage</th><th>Visible symptom</th><th>Next investment</th><th>Evidence to advance</th></tr></thead><tbody><tr><td>Unstructured</td><td>Definitions and ownership vary by person</td><td>Agree the lifecycle and owners</td><td>The team can explain the path consistently</td></tr><tr><td>Documented</td><td>Rules exist but are applied manually</td><td>Add data checks and handoff visibility</td><td>Exceptions are visible and categorized</td></tr><tr><td>Connected</td><td>Systems exchange data but reports disagree</td><td>Create a measurement contract</td><td>Key metrics have one calculation</td></tr><tr><td>Automated</td><td>Repeatable workflows run with some failures</td><td>Add logs, alerts, and rollback</td><td>The team can explain and repair failures</td></tr><tr><td>Augmented</td><td>Stable workflows need faster research or monitoring</td><td>Add bounded AI assistance</td><td>Human review and source evidence are recorded</td></tr></tbody></table>
+<p>This sequence keeps the team from solving a process problem with a platform purchase. It also gives hiring managers and leaders a clearer way to assess marketing operations work: can the person define the system, make it observable, and improve it without creating hidden dependencies?</p>
+<h2>The short version</h2>
+<p>The best marketing operations practices are not a list of tools. They are operating agreements:</p>
+<ol><li>Define stages and ownership.</li><li>Govern the fields and sources that affect decisions.</li><li>Make handoffs explicit.</li><li>Connect activity to pipeline and pair outcomes with system-health checks.</li><li>Automate stable work with logs and exception paths.</li><li>Add AI only to bounded workflows with evidence and human review.</li><li>Inspect the system weekly and redesign it quarterly.</li></ol>
+<div class="closing"><p>For teams that need the infrastructure designed and built, an operating-system audit is a useful starting point. It identifies the current bottleneck before the team adds another tool, workflow, or agent.</p></div>
+</main>
+</body>
+</html>
